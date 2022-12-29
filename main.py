@@ -54,12 +54,12 @@ if not start_pos:
 start_pos_row = start_pos[0]
 start_pos_column = start_pos[1]
 
-for z in range(start_pos_row):
+for z in range(start_pos_column):
     with open(MACRO_FILE, "a") as file_object:
         file_object.write(CURSOR_LEFT)
         file_object.close()
 
-for z in range(start_pos_column):
+for z in range(start_pos_row):
     with open(MACRO_FILE, "a") as file_object:
         file_object.write(CURSOR_UP)
         file_object.close()
