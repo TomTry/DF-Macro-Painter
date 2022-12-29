@@ -41,11 +41,11 @@ CURSOR_UP = "\t\tKEYBOARD_CURSOR_UP\n\tEnd of group\n"
 CURSOR_DOWN = "\t\tKEYBOARD_CURSOR_DOWN\n\tEnd of group\n"
 MINE = "\t\tSELECT\n\tEnd of group\n\t\tSELECT\n\tEnd of group\n"
 
-PICTURE_COLUMNS = cv_image.shape[0]
-PICTURE_WIDTH = cv_image.shape[1]
+PICTURE_COLUMNS = cv_image.shape[1]
+PICTURE_ROWS = cv_image.shape[0]
 
 for column in range(PICTURE_COLUMNS):
-    for row in range(PICTURE_WIDTH):
+    for row in range(PICTURE_ROWS):
         if cv_image[row][column] == 143:
             start_pos = [row,column]
 
@@ -64,7 +64,7 @@ for z in range(start_pos_column):
         file_object.write(CURSOR_UP)
         file_object.close()
 
-for row in range(PICTURE_WIDTH):
+for row in range(PICTURE_ROWS):
     for column in range(PICTURE_COLUMNS):
         if cv_image[row][column] != 0:
             with open(MACRO_FILE, "a") as file_object:
